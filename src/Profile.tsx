@@ -28,7 +28,7 @@ export default function Profile({ address, connector, isConnected }: profileProp
                 {/* <img src={ensAvatar} alt="ENS Avatar" /> */}
                 {/* { <div>{ensName ? `${ensName} (${address})` : address}</div> */}
                 {/* <div>Connected to {connector?.name}</div>} */}
-                <button className='h-full self-stretch p-4 md:bg-green-300 md:hover:bg-green-400' onClick={() => { disconnect() }}><div>{ensName ? `${ensName}` : `${address?.substring(0, 6)}...${address?.substring(address.length - 4)}`}</div></button>
+                <button className='h-full self-stretch p-4 md:bg-green-300 md:hover:bg-green-400 md:text-black' onClick={() => { disconnect() }}><div>{ensName ? `${ensName}` : `${address?.substring(0, 6)}...${address?.substring(address.length - 4)}`}</div></button>
             </>
         )
     }

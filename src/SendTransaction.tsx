@@ -63,7 +63,7 @@ export default function SendTransaction() {
                         onChange={(e) => setTo(e.target.value)}
                         placeholder="0xA0Cf…251e"
                         value={to}
-                        className="h-12 px-2 border-2 border-black focus:outline-dashed focus:outline-2 focus:border-0 transition-all duration-100"
+                        className="h-12 px-2 border-2 border-black dark:border-red-200 focus:outline-dashed focus:outline-2 focus:border-0 transition-all duration-100"
                     />
                     {chain && <div>Connected to {chain.name}</div>}
                     {chains && (
@@ -97,8 +97,12 @@ export default function SendTransaction() {
                         onChange={(e) => setDataString(e.target.value)}
                         placeholder="LFG FAM!!!"
                         value={dataString}
-                        className="h-12 px-2 border-2 border-black focus:outline-dashed focus:outline-2 focus:border-0 transition-all duration-100"
+                        className="h-12 px-2 border-2 border-black dark:border-red-200 focus:outline-dashed focus:outline-2 focus:border-0 transition-all duration-100"
                     />
+                    {chain && <div>Connected to {chain.name}</div>}
+                    {chains && (
+                        <div>Available chains: {chains.map((chain) => chain.nativeCurrency.symbol + " ")}</div>
+                    )}
                 </form>
             </div>
         </>
