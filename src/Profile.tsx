@@ -57,7 +57,7 @@ export default function Profile({ address, connector, isConnected }: profileProp
                 disabled={!connector.ready}
                 key={connector.id}
                 onClick={() => connect({ connector })}
-                className="h-full self-stretch p-4 md:bg-red-300 md:hover:bg-red-400"
+                className="h-full self-stretch p-4 md:bg-red-300 md:hover:bg-red-400 md:text-black"
             >
                 {connector.name}
                 {!connector.ready && ' (unsupported)'}
