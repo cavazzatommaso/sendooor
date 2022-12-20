@@ -10,7 +10,7 @@ import NotConnected from './NotConnected'
 
 const { chains, provider, webSocketProvider } = configureChains(
   [mainnet,avalanche,bsc],
-  [alchemyProvider({ apiKey: '-Xa1KImKC_YxiuIUOJguZJ_Xu8CODwHH' }), publicProvider()],
+  [alchemyProvider({ apiKey: 'V80cbddWWd-0O1mlUPONUxQEq00pu674' }), publicProvider()],
 )
 
 // Set up client
