@@ -1,5 +1,5 @@
 import { WagmiConfig, createClient, configureChains, mainnet, useAccount } from 'wagmi'
-
+import { avalanche, bsc } from '@wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
@@ -7,8 +7,9 @@ import Profile from './Profile'
 import SendTransaction from './SendTransaction'
 import NotConnected from './NotConnected'
 
+
 const { chains, provider, webSocketProvider } = configureChains(
-  [mainnet],
+  [mainnet,avalanche,bsc],
   [alchemyProvider({ apiKey: '-Xa1KImKC_YxiuIUOJguZJ_Xu8CODwHH' }), publicProvider()],
 )
 
@@ -24,7 +25,7 @@ const client = createClient({
 
 function App() {
   const { address, connector, isConnected } = useAccount()
-
+  
   return (
     <WagmiConfig client={client}>
       <div className='App w-full h-[100vh] text-black md:overflow-hidden'>

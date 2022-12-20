@@ -2,6 +2,7 @@ import { hexlify, toUtf8Bytes } from 'ethers/lib/utils.js'
 import * as React from 'react'
 import { useDebounce } from 'use-debounce'
 import {
+    useNetwork,
     usePrepareSendTransaction,
     useSendTransaction,
     useWaitForTransaction,
@@ -14,6 +15,9 @@ export default function SendTransaction() {
 
     const [dataString, setDataString] = React.useState('')
     const [debouncedDataString] = useDebounce(dataString, 500)
+
+    const { chain, chains } = useNetwork()
+
 
     const { config } = usePrepareSendTransaction({
         request: {
@@ -61,6 +65,10 @@ export default function SendTransaction() {
                         value={to}
                         className="h-12 px-2 border-2 border-black focus:outline-dashed focus:outline-2 focus:border-0 transition-all duration-100"
                     />
+                    {chain && <div>Connected to {chain.name}</div>}
+                    {chains && (
+                        <div>Available chains: {chains.map((chain) => chain.nativeCurrency.symbol + " ")}</div>
+                    )}
                 </form>
             </div>
         </>
