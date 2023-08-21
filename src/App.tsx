@@ -8,9 +8,11 @@ import SendTransaction from './SendTransaction'
 import NotConnected from './NotConnected'
 
 
+const API_KEY = import.meta.env.VITE_ALCHEMY_API_KEY
+
 const { chains, provider, webSocketProvider } = configureChains(
   [mainnet,avalanche,bsc],
-  [alchemyProvider({ apiKey: 'V80cbddWWd-0O1mlUPONUxQEq00pu674' }), publicProvider()],
+  [alchemyProvider({ apiKey: API_KEY}), publicProvider()],
 )
 
 // Set up client
@@ -22,6 +24,8 @@ const client = createClient({
   provider,
   webSocketProvider,
 })
+
+
 
 function App() {
   const { address, connector, isConnected } = useAccount()
