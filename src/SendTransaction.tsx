@@ -107,40 +107,6 @@ export default function SendTransaction() {
             </div>
         </>
 
-
-    // return (
-    //     <form
-    //         onSubmit={(e) => {
-    //             e.preventDefault()
-    //             sendTransaction?.()
-    //         }}
-    //     >
-    //         <input
-    //             aria-label="Recipient"
-    //             onChange={(e) => setTo(e.target.value)}
-    //             placeholder="0xA0Cf…251e"
-    //             value={to}
-    //         />
-    //         <input
-    //             aria-label="Message)"
-    //             onChange={(e) => setDataString(e.target.value)}
-    //             placeholder="LFG FAM!!!"
-    //             value={dataString}
-    //         />
-    //         <button disabled={isLoading || !sendTransaction || !to || !dataString}>
-    //             {isLoading ? 'Sending...' : 'Send'}
-    //         </button>
-    //         {isSuccess && (
-    //             <div>
-    //                 Successfully sent message: {dataString} to {to}
-    //                 <div>
-    //                     <a href={`https://etherscan.io/tx/${data?.hash}`}>Etherscan</a>
-    //                 </div>
-    //             </div>
-    //         )}
-    //     </form>
-    // )
-
     return <>
         Generic Error</>
 }

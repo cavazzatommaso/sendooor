@@ -34,24 +34,6 @@ export default function Profile({ address, connector, isConnected }: profileProp
     }
 
     return (
-        // <div className='h-full self-stretch p-4 bg-red-300'>
-        //     {connectors.map((connector) => (
-        //         <button
-        //             disabled={!connector.ready}
-        //             key={connector.id}
-        //             onClick={() => connect({ connector })}
-        //             className="h-full"
-        //         >
-        //             {connector.name}
-        //             {!connector.ready && ' (unsupported)'}
-        //             {isLoading &&
-        //                 connector.id === pendingConnector?.id &&
-        //                 ' (connecting)'}
-        //         </button>
-        //     ))}
-
-        //     {error && <div>{error.message}</div>}
-        // </div>
         <>{connectors.map((connector) => (
             <button
                 disabled={!connector.ready}
